@@ -176,3 +176,43 @@ umount -R /mnt
 reboot
 ```
 
+## Step 4: Connecting to the Internet
+```
+# setup interface
+ip link set wlan0 up
+
+# if error received check rfkill list to see if interface is blocked
+rfkill
+# if soft blocked
+rfkill unblock wlan
+# set up interface again using ip link
+
+# check status of NetworkManager
+systemctl status NetworkManager
+
+# will likely need to be setup
+systemctl restart NetworkManager
+
+# after restarting, enable
+systemctl enable NetworkManager
+
+# check available wifi list
+nmcli device wifi list
+
+# connect to desired wifi
+nmcli device wifi connect "LAN name" password LAN_password
+
+# ping a website to check connection
+ping archlinux.org
+```
+
+## Step 5: Creating a new user
+```
+useradd -m caitlin
+
+# add password
+passwd caitlin
+
+# install sudo and nano
+pacman -S sudo nano
+```
