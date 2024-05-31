@@ -215,4 +215,24 @@ passwd caitlin
 
 # install sudo and nano
 pacman -S sudo nano
+
+# use nano as editor
+export EDITOR=nano visudo
+
+# add line to /etc/sudoers under 'User privilege specification`
+caitlin ALL=(ALL) ALL
+```
+
+## Step 6: Installing plasma and kde
+```
+# install xorg, plamsa, and kde-applications
+pacman -S xorg plasma kde-applications
+
+# put in ~/.bash_profile
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  exec startx
+fi
+
+# start a session 
+startx /usr/bin/startplasma-x11
 ```
