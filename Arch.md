@@ -208,7 +208,7 @@ ping archlinux.org
 
 ## Step 5: Creating a new user
 ```
-useradd -m caitlin
+useradd caitlin -m -s /bin/bash
 
 # add password
 passwd caitlin
