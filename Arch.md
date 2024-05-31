@@ -223,7 +223,7 @@ export EDITOR=nano visudo
 caitlin ALL=(ALL) ALL
 ```
 
-## Step 6: Installing plasma and kde
+## Step 6: Installing plasma and KDE
 ```
 # install xorg, plamsa, and kde-applications
 pacman -S xorg plasma kde-applications
